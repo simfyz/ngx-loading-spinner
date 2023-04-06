@@ -11,13 +11,13 @@ export class NgxLoadingSpinnerConfigService {
   constructor(@Inject('loadingConfig') @Optional() private readonly config: NgxLoadingSpinnerConfig) {
     this.config = this.config || {};
     this.defaultConfig = new NgxLoadingSpinnerConfig({
-      animationType: this.config.animationType || ANIMATION_TYPES.fadingCircle,
-      backdropColor: this.config.backdropColor || 'rgba(0, 0, 0, 0.3)',
-      spinnerColor: this.config.spinnerColor || '#fff',
-      spinnerPosition: this.config.spinnerPosition || 'center',
-      backdropBorderRadius: this.config.backdropBorderRadius || '0',
-      spinnerSize: this.config.spinnerSize || 'md',
-      spinnerFontSize: this.config.spinnerFontSize || ''
+      animationType: this.config?.animationType || ANIMATION_TYPES.fadingCircle,
+      backdropColor: this.config?.backdropColor || 'rgba(0, 0, 0, 0.3)',
+      spinnerColor: this.config?.spinnerColor || '#fff',
+      spinnerPosition: this.config?.spinnerPosition || 'center',
+      backdropBorderRadius: this.config?.backdropBorderRadius || '0',
+      spinnerSize: this.config?.spinnerSize || 'md',
+      spinnerFontSize: this?.config.spinnerFontSize || ''
     });
   }
 

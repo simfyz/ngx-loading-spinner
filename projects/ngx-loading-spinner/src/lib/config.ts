@@ -1,10 +1,11 @@
+type SpinnerSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '' | undefined;
 export interface INgxLoadingSpinnerConfig {
   animationType: string,
   backdropColor: string,
   backdropBorderRadius?: string,
   spinnerColor: string,
   spinnerPosition: string,
-  spinnerSize: string,
+  spinnerSize: SpinnerSize,
   spinnerFontSize: string
 }
 
@@ -14,7 +15,7 @@ export class NgxLoadingSpinnerConfig implements INgxLoadingSpinnerConfig {
   spinnerColor: string;
   spinnerPosition: string;
   backdropBorderRadius?: string;
-  spinnerSize: string;
+  spinnerSize: SpinnerSize;
   spinnerFontSize: string;
 
   constructor(private config: INgxLoadingSpinnerConfig) {
