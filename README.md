@@ -1,6 +1,8 @@
 # NgxLoadingSpinner
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+#####
+CustomizationCustomizable loading spinner for Angular 2+ with Ivy support inspired from [ng2-loading-spinner](https://github.com/me-majidi/ng2-loading-spinner)
 
 ## Development server
 
