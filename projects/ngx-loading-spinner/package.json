@@ -7,6 +7,29 @@
   },
   "description": "Customizable loading spinner for Angular 2+ with Ivy support",
   "homepage": "https://github.com/simfyz/ngx-loading-spinner",
+  "keywords": [
+    "Angular",
+    "Angular 15",
+    "Angular Ivy Supported Loading Spinner",
+    "ng",
+    "load",
+    "loading",
+    "spinner",
+    "Angular loading spinner",
+    "custom spinner",
+    "custom loading spinner",
+    "ng2-loading-spinner",
+    "Angular loading",
+    "Angular laoding spinner",
+    "wait",
+    "angular template loading",
+    "angular css spinner"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simfyz/ngx-loading-spinner.git"
+  },
+  "license": "GPL-3.0",
   "peerDependencies": {
     "@angular/common": "^15.1.0",
     "@angular/core": "^15.1.0"
