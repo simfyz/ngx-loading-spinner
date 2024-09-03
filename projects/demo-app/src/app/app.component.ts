@@ -3,7 +3,7 @@ import {NgForm, FormsModule} from '@angular/forms';
 import {ANIMATION_TYPES, NgxLoadingSpinnerConfig} from '../../../ngx-loading-spinner';
 
 import {ColorPickerModule} from 'ngx-color-picker';
-import {NgxLoadingSpinnerDirective} from '../../../ngx-loading-spinner/src/lib/ngx-loading-spinner.directive';
+import {NgxLoadingSpinnerDirective} from '../../../ngx-loading-spinner';
 
 @Component({
   selector: 'app-root',

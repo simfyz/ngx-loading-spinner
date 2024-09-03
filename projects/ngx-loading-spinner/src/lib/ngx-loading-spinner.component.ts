@@ -1,32 +1,33 @@
-import { Component, Input, TemplateRef, ViewContainerRef, inject } from '@angular/core';
+import { Component, TemplateRef, ViewContainerRef, inject, input } from '@angular/core';
 import {ANIMATION_TYPES} from './animation-types';
 import {NgxLoadingSpinnerConfig} from './config';
 import {NgClass, NgStyle, NgTemplateOutlet} from '@angular/common';
 
 @Component({
   selector: 'ngx-loading-spinner',
-  template: `
+  
+      template: `
     <div class="backdrop"
-         [ngStyle]="{'background-color': config?.backdropColor, 'border-radius': config?.backdropBorderRadius}"></div>
+         [ngStyle]="{'background-color': config()?.backdropColor, 'border-radius': config()?.backdropBorderRadius}"></div>
 
     <div class="wrapper"
-         [ngClass]="[config?.spinnerPosition, config?.spinnerSize]"
-         [ngStyle]="{'color': config?.spinnerColor, 'font-size': config?.spinnerFontSize}">
-      @if (!template) {
+         [ngClass]="[config()?.spinnerPosition, config()?.spinnerSize]"
+         [ngStyle]="{'color': config()?.spinnerColor, 'font-size': config()?.spinnerFontSize}">
+      @if (!template()) {
         <!-- DUAL CIRCLE SPINNER -->
-        @if (config?.animationType === ANIMATION_TYPES.dualCircle) {
+        @if (config()?.animationType === ANIMATION_TYPES.dualCircle) {
           <div class="dual-circle"></div>
         }
         <!-- SCALING BARS -->
-        @if (config?.animationType === ANIMATION_TYPES.scalingBars) {
+        @if (config()?.animationType === ANIMATION_TYPES.scalingBars) {
           <div class="scaling-bars"></div>
         }
         <!-- CHASING DOTS -->
-        @if (config?.animationType === ANIMATION_TYPES.chasingDots) {
+        @if (config()?.animationType === ANIMATION_TYPES.chasingDots) {
           <div class="chasing-dots"></div>
         }
         <!-- BOUNCING DOTS -->
-        @if (config?.animationType === ANIMATION_TYPES.bouncingDots) {
+        @if (config()?.animationType === ANIMATION_TYPES.bouncingDots) {
           <div class="bouncing-dots">
             <div class="bounce-1"></div>
             <div class="bounce-2"></div>
@@ -34,7 +35,7 @@ import {NgClass, NgStyle, NgTemplateOutlet} from '@angular/common';
           </div>
         }
         <!-- FADING CIRCLE -->
-        @if (config?.animationType === ANIMATION_TYPES.fadingCircle) {
+        @if (config()?.animationType === ANIMATION_TYPES.fadingCircle) {
           <div class="fading-circle">
             <div class="sk-circle1 sk-circle"></div>
             <div class="sk-circle2 sk-circle"></div>
@@ -51,26 +52,26 @@ import {NgClass, NgStyle, NgTemplateOutlet} from '@angular/common';
           </div>
         }
         <!-- HALF CIRCLE -->
-        @if (config?.animationType === ANIMATION_TYPES.halfCircle) {
+        @if (config()?.animationType === ANIMATION_TYPES.halfCircle) {
           <div class="half-circle"></div>
         }
         <!-- CUBIC GRID -->
-        @if (config?.animationType === ANIMATION_TYPES.cubeGrid) {
+        @if (config()?.animationType === ANIMATION_TYPES.cubeGrid) {
           <div class="sk-cube-grid cube-grid">
-            <div class="sk-cube sk-cube1" [ngStyle]="{'background-color': config?.spinnerColor}"></div>
-            <div class="sk-cube sk-cube2" [ngStyle]="{'background-color': config?.spinnerColor}"></div>
-            <div class="sk-cube sk-cube3" [ngStyle]="{'background-color': config?.spinnerColor}"></div>
-            <div class="sk-cube sk-cube4" [ngStyle]="{'background-color': config?.spinnerColor}"></div>
-            <div class="sk-cube sk-cube5" [ngStyle]="{'background-color': config?.spinnerColor}"></div>
-            <div class="sk-cube sk-cube6" [ngStyle]="{'background-color': config?.spinnerColor}"></div>
-            <div class="sk-cube sk-cube7" [ngStyle]="{'background-color': config?.spinnerColor}"></div>
-            <div class="sk-cube sk-cube8" [ngStyle]="{'background-color': config?.spinnerColor}"></div>
-            <div class="sk-cube sk-cube9" [ngStyle]="{'background-color': config?.spinnerColor}"></div>
+            <div class="sk-cube sk-cube1" [ngStyle]="{'background-color': config()?.spinnerColor}"></div>
+            <div class="sk-cube sk-cube2" [ngStyle]="{'background-color': config()?.spinnerColor}"></div>
+            <div class="sk-cube sk-cube3" [ngStyle]="{'background-color': config()?.spinnerColor}"></div>
+            <div class="sk-cube sk-cube4" [ngStyle]="{'background-color': config()?.spinnerColor}"></div>
+            <div class="sk-cube sk-cube5" [ngStyle]="{'background-color': config()?.spinnerColor}"></div>
+            <div class="sk-cube sk-cube6" [ngStyle]="{'background-color': config()?.spinnerColor}"></div>
+            <div class="sk-cube sk-cube7" [ngStyle]="{'background-color': config()?.spinnerColor}"></div>
+            <div class="sk-cube sk-cube8" [ngStyle]="{'background-color': config()?.spinnerColor}"></div>
+            <div class="sk-cube sk-cube9" [ngStyle]="{'background-color': config()?.spinnerColor}"></div>
           </div>
         }
       }
 
-      <ng-container *ngTemplateOutlet="template"></ng-container>
+      <ng-container *ngTemplateOutlet="template()"></ng-container>
     </div>
   `,
   styles: [`
@@ -697,8 +698,8 @@ export class NgxLoadingSpinnerComponent {
   vcRef = inject(ViewContainerRef);
 
 
-  @Input() config: NgxLoadingSpinnerConfig | null = null;
-  @Input() template: TemplateRef<any> | null = null;
+  config = input<NgxLoadingSpinnerConfig | null>(null);
+  template = input<TemplateRef<any> | null>(null);
 
   ANIMATION_TYPES = ANIMATION_TYPES;
 }
