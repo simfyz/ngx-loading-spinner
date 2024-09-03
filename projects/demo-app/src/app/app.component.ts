@@ -1,7 +1,6 @@
 import {AfterContentChecked, Component, TemplateRef, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {ANIMATION_TYPES} from '../../../ngx-loading-spinner/src/public-api';
-import {NgxLoadingSpinnerConfig} from 'ngx-loading-spinner';
+import {ANIMATION_TYPES, NgxLoadingSpinnerConfig} from '../../../ngx-loading-spinner';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import {NgxLoadingSpinnerConfig} from 'ngx-loading-spinner';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterContentChecked {
-  @ViewChild('customTemplate') customTemplate: TemplateRef<any> | null = null
+  @ViewChild('customTemplate') customTemplate: TemplateRef<any> | null = null;
   show = false;
   borderRadius = 15;
   fontSize: any;
