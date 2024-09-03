@@ -1,27 +1,25 @@
-import {ComponentRef, Directive, ElementRef, Input, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef} from '@angular/core';
+import { ComponentRef, Directive, ElementRef, Input, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef, inject } from '@angular/core';
 import {NgxLoadingSpinnerComponent} from './ngx-loading-spinner.component';
 import {NgxLoadingSpinnerConfigService} from './ngx-loading-spinner-config.service';
 import {NgxLoadingSpinnerConfig} from './config';
 
 @Directive({
   selector: '[ngx-loading]',
-  providers: [NgxLoadingSpinnerConfigService]
+  providers: [NgxLoadingSpinnerConfigService],
+  standalone: true
 })
 export class NgxLoadingSpinnerDirective implements OnInit, OnChanges, OnDestroy {
+  private el = inject(ElementRef);
+  private vcRef = inject(ViewContainerRef);
+  private renderer = inject(Renderer2);
+  private configService = inject(NgxLoadingSpinnerConfigService);
+
 
   @Input('ngx-loading') show = false;
   @Input() config: NgxLoadingSpinnerConfig = {} as NgxLoadingSpinnerConfig;
   @Input() template: TemplateRef<any> | null = null;
 
   private spinnerComponentRef?: ComponentRef<NgxLoadingSpinnerComponent>;
-
-  constructor(
-    private el: ElementRef,
-    private vcRef: ViewContainerRef,
-    // private cfResolver: ComponentFactoryResolver,
-    private renderer: Renderer2,
-    private configService: NgxLoadingSpinnerConfigService) {
-  }
 
   ngOnInit() {
     this.setPosition();

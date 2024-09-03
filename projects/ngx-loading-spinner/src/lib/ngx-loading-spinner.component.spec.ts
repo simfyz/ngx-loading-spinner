@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NgxLoadingSpinnerComponent } from './ngx-loading-spinner.component';
+import {NgxLoadingSpinnerComponent} from './ngx-loading-spinner.component';
 
 describe('NgxLoadingSpinnerComponent', () => {
   let component: NgxLoadingSpinnerComponent;
@@ -8,9 +8,9 @@ describe('NgxLoadingSpinnerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxLoadingSpinnerComponent ]
+      imports: [NgxLoadingSpinnerComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(NgxLoadingSpinnerComponent);
     component = fixture.componentInstance;

@@ -1,4 +1,4 @@
-<ng-container *ngIf="initialized">
+@if (initialized) {
   <nav>
     <div class="github-link">
       <a href="https://github.com/simfyz/ngx-loading-spinner">
@@ -88,7 +88,6 @@
               </select>
             </div>
           </div>
-
           <div class="form-group row">
             <label for="spinnerPosition"
                    class="col-7">Spinner position
@@ -111,7 +110,6 @@
               </select>
             </div>
           </div>
-
           <div class="form-group row">
             <label for="spinnerSize"
                    class="col-7">Spinner size
@@ -130,7 +128,6 @@
               </select>
             </div>
           </div>
-
           <div class="form-group row">
             <label for="backdropColor"
                    class="col-7">Backdrop color
@@ -143,7 +140,6 @@
                      [style.background]="loadingConfig.backdropColor">
             </div>
           </div>
-
           <div class="form-group row">
             <label for="spinnerFontSize"
                    class="col-7">
@@ -160,7 +156,6 @@
                 id="spinnerFontSize">
             </div>
           </div>
-
           <div class="form-group row">
             <label for="spinnerColor"
                    class="col-7">Spinner color
@@ -173,7 +168,6 @@
                      [style.background]="loadingConfig.spinnerColor">
             </div>
           </div>
-
           <div class="form-group row">
             <label for="backdropBorderRadius"
                    class="col-7">Backdrop border-radius<small class="ml-1">(px)</small>
@@ -187,7 +181,6 @@
                 id="backdropBorderRadius">
             </div>
           </div>
-
           <div class="form-group row">
             <div class="col">
               <div class="zk-checkbox">
@@ -249,12 +242,10 @@
       </div>
     </div>
   </main>
-
-
   <ng-template #customTemplate>
     <div class="align-items-center d-flex flex-column flex-direction">
       <p class="mb-5">Please wait</p>
       <div class="dots-loader"></div>
     </div>
   </ng-template>
-</ng-container>
+}

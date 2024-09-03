@@ -1,11 +1,16 @@
 import {AfterContentChecked, Component, TemplateRef, ViewChild} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {NgForm, FormsModule} from '@angular/forms';
 import {ANIMATION_TYPES, NgxLoadingSpinnerConfig} from '../../../ngx-loading-spinner';
+
+import {ColorPickerModule} from 'ngx-color-picker';
+import {NgxLoadingSpinnerDirective} from '../../../ngx-loading-spinner/src/lib/ngx-loading-spinner.directive';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [FormsModule, ColorPickerModule, NgxLoadingSpinnerDirective]
 })
 export class AppComponent implements AfterContentChecked {
   @ViewChild('customTemplate') customTemplate: TemplateRef<any> | null = null;

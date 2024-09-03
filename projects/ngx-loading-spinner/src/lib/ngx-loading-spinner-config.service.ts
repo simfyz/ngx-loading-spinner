@@ -1,23 +1,24 @@
-import {Inject, Injectable, Optional} from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {NgxLoadingSpinnerConfig} from './config';
 import {ANIMATION_TYPES} from './animation-types';
 import {findIndex, objectValues} from './utils';
 
 @Injectable()
 export class NgxLoadingSpinnerConfigService {
+  private readonly loadingConfig = inject<Partial<NgxLoadingSpinnerConfig>>('loadingConfig' as never, { optional: true });
+
 
   private readonly defaultConfig: NgxLoadingSpinnerConfig;
 
-  constructor(@Inject('loadingConfig') @Optional() private readonly config: NgxLoadingSpinnerConfig) {
-    this.config = this.config || {};
+  constructor() {
     this.defaultConfig = new NgxLoadingSpinnerConfig({
-      animationType: this.config?.animationType || ANIMATION_TYPES.fadingCircle,
-      backdropColor: this.config?.backdropColor || 'rgba(0, 0, 0, 0.3)',
-      spinnerColor: this.config?.spinnerColor || '#fff',
-      spinnerPosition: this.config?.spinnerPosition || 'center',
-      backdropBorderRadius: this.config?.backdropBorderRadius || '0',
-      spinnerSize: this.config?.spinnerSize || 'md',
-      spinnerFontSize: this?.config.spinnerFontSize || ''
+      animationType: this.loadingConfig?.animationType || ANIMATION_TYPES.fadingCircle,
+      backdropColor: this.loadingConfig?.backdropColor || 'rgba(0, 0, 0, 0.3)',
+      spinnerColor: this.loadingConfig?.spinnerColor || '#fff',
+      spinnerPosition: this.loadingConfig?.spinnerPosition || 'center',
+      backdropBorderRadius: this.loadingConfig?.backdropBorderRadius || '0',
+      spinnerSize: this.loadingConfig?.spinnerSize || 'md',
+      spinnerFontSize: this?.loadingConfig?.spinnerFontSize || ''
     });
   }
 
