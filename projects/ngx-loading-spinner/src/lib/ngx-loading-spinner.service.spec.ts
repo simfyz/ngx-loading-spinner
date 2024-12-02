@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { NgxLoadingSpinnerConfigService } from './ngx-loading-spinner-config.service';
+import {NgxLoadingSpinnerConfigService} from './ngx-loading-spinner-config.service';
 
 describe('NgxLoadingSpinnerService', () => {
   let service: NgxLoadingSpinnerConfigService;

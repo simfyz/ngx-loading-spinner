@@ -1,12 +1,11 @@
-import { Component, TemplateRef, ViewContainerRef, inject, input } from '@angular/core';
+import {Component, TemplateRef, ViewContainerRef, inject, input} from '@angular/core';
 import {ANIMATION_TYPES} from './animation-types';
 import {NgxLoadingSpinnerConfig} from './config';
 import {NgClass, NgStyle, NgTemplateOutlet} from '@angular/common';
 
 @Component({
   selector: 'ngx-loading-spinner',
-  
-      template: `
+  template: `
     <div class="backdrop"
          [ngStyle]="{'background-color': config()?.backdropColor, 'border-radius': config()?.backdropBorderRadius}"></div>
 
@@ -688,10 +687,7 @@ import {NgClass, NgStyle, NgTemplateOutlet} from '@angular/common';
         transform: scale3D(0, 0, 1);
       }
     }
-
-
   `],
-  standalone: true,
   imports: [NgStyle, NgClass, NgTemplateOutlet]
 })
 export class NgxLoadingSpinnerComponent {

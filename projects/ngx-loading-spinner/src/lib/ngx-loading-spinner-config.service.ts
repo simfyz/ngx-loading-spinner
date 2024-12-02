@@ -1,11 +1,11 @@
-import { Injectable, inject } from '@angular/core';
+import {Injectable, inject} from '@angular/core';
 import {NgxLoadingSpinnerConfig} from './config';
 import {ANIMATION_TYPES} from './animation-types';
 import {findIndex, objectValues} from './utils';
 
 @Injectable()
 export class NgxLoadingSpinnerConfigService {
-  private readonly loadingConfig = inject<Partial<NgxLoadingSpinnerConfig>>('loadingConfig' as never, { optional: true });
+  private readonly loadingConfig = inject<Partial<NgxLoadingSpinnerConfig>>('loadingConfig' as never, {optional: true});
 
 
   private readonly defaultConfig: NgxLoadingSpinnerConfig;

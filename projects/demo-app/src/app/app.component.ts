@@ -9,7 +9,6 @@ import {NgxLoadingSpinnerDirective} from '../../../ngx-loading-spinner';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  standalone: true,
   imports: [FormsModule, ColorPickerModule, NgxLoadingSpinnerDirective]
 })
 export class AppComponent implements AfterContentChecked {

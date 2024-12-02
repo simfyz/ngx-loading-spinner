@@ -3,8 +3,8 @@ import {NgxLoadingSpinnerConfigService} from './ngx-loading-spinner-config.servi
 import {NgxLoadingSpinnerConfig} from './config';
 
 export function provideNgxLoadingSpinner(globalConfig: Partial<NgxLoadingSpinnerConfig>) {
-    return makeEnvironmentProviders([
-        NgxLoadingSpinnerConfigService,
-        {provide: 'loadingConfig', useValue: globalConfig}
-    ]);
+  return makeEnvironmentProviders([
+    NgxLoadingSpinnerConfigService,
+    {provide: 'loadingConfig', useValue: globalConfig}
+  ]);
 }

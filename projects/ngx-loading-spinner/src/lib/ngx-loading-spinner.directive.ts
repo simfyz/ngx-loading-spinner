@@ -1,12 +1,11 @@
-import {ComponentRef, DestroyRef, Directive, effect, ElementRef, inject, input, Renderer2, TemplateRef, ViewContainerRef} from '@angular/core';
+import {ComponentRef, DestroyRef, Directive, effect, ElementRef, inject, input, model, Renderer2, TemplateRef, ViewContainerRef} from '@angular/core';
 import {NgxLoadingSpinnerComponent} from './ngx-loading-spinner.component';
 import {NgxLoadingSpinnerConfigService} from './ngx-loading-spinner-config.service';
 import {NgxLoadingSpinnerConfig} from './config';
 
 @Directive({
   selector: '[ngx-loading]',
-  providers: [NgxLoadingSpinnerConfigService],
-  standalone: true
+  providers: [NgxLoadingSpinnerConfigService]
 })
 export class NgxLoadingSpinnerDirective {
   private el = inject(ElementRef);
@@ -16,7 +15,7 @@ export class NgxLoadingSpinnerDirective {
 
 
   show = input(false, {alias: 'ngx-loading'});
-  config = input<NgxLoadingSpinnerConfig>({} as NgxLoadingSpinnerConfig);
+  config = model<NgxLoadingSpinnerConfig>({} as NgxLoadingSpinnerConfig);
   template = input<TemplateRef<any> | null>(null);
 
   private spinnerComponentRef?: ComponentRef<NgxLoadingSpinnerComponent>;

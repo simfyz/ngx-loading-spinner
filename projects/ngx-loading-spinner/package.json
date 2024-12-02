@@ -1,6 +1,6 @@
 {
   "name": "@simfyz/ngx-loading-spinner",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Fayas Ismail (https://github.com/simfyz)",
   "description": "Customizable loading spinner for Angular 2+ with Ivy support",
   "homepage": "https://github.com/simfyz/ngx-loading-spinner#readme",
@@ -22,7 +22,6 @@
     "angular template loading",
     "angular css spinner"
   ],
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/simfyz/ngx-loading-spinner.git"
@@ -30,8 +29,8 @@
   "main": "src/public-api.ts",
   "license": "GPL-3.0",
   "peerDependencies": {
-    "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0"
+    "@angular/common": "^18.0.0 || ^19.0.0",
+    "@angular/core": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
